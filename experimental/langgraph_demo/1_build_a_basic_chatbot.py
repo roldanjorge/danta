@@ -64,11 +64,11 @@ graph = graph_builder.compile()
 # Visualize the graph
 # ====================================
 
-try:
-    with open("graph_visualization.png", "wb") as f:
-        f.write(graph.get_graph().draw_mermaid_png())
-except OSError as e:
-    print(f"An error occurred while saving the graph: {e}")
+# try:
+#     with open("graph_visualization.png", "wb") as f:
+#         f.write(graph.get_graph().draw_mermaid_png())
+# except OSError as e:
+#     print(f"An error occurred while saving the graph: {e}")
 
 
 # ====================================
