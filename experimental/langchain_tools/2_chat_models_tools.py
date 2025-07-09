@@ -43,3 +43,6 @@ query = "What is 3 * 12?"
 
 output = llm_with_tools.invoke(query)
 print(output)
+
+tool_calls = output.tool_calls
+print(tool_calls)
