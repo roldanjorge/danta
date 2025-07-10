@@ -1,1 +1,3 @@
 site_name: danta
+theme:
+  name: mkdocs
