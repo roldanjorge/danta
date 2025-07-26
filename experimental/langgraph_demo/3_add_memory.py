@@ -5,6 +5,7 @@ from dotenv import find_dotenv, load_dotenv
 from langchain.chat_models import init_chat_model
 from langchain_core.messages import ToolMessage
 from langchain_tavily import TavilySearch
+from langgraph.checkpoint.memory import InMemorySaver
 from langgraph.graph import END, START, StateGraph
 from langgraph.graph.message import add_messages
 from typing_extensions import TypedDict
@@ -138,17 +139,63 @@ def stream_graph_updates(user_input: str):
             print("Assistant:", value["messages"][-1].content)
 
 
-while True:
-    try:
-        user_input = input("User: ")
-        if user_input.lower() in ["quit", "exit", "q"]:
-            print("Goodbye!")
-            break
+# while True:
+#     try:
+#         user_input = input("User: ")
+#         if user_input.lower() in ["quit", "exit", "q"]:
+#             print("Goodbye!")
+#             break
 
-        stream_graph_updates(user_input)
-    except (EOFError, KeyboardInterrupt):
-        # fallback if input() is not available
-        user_input = "What do you know about LangGraph?"
-        print("User: " + user_input)
-        stream_graph_updates(user_input)
-        break
+#         stream_graph_updates(user_input)
+#     except (EOFError, KeyboardInterrupt):
+#         # fallback if input() is not available
+#         user_input = "What do you know about LangGraph?"
+#         print("User: " + user_input)
+#         stream_graph_updates(user_input)
+#         break
+
+
+# ====================================
+# Start of 3. Add memory
+# ====================================
+
+memory = InMemorySaver()
+
+graph = graph_builder.compile(checkpointer=memory)
+
+
+# ====================================
+# Visualize the graph
+# ====================================
+# try:
+#     with open("graph_visualization_memory.png", "wb") as f:
+#         f.write(graph.get_graph().draw_mermaid_png())
+# except OSError as e:
+#     print(f"An error occurred while saving the graph: {e}")
+
+
+config = {"configurable": {"thread_id": "1"}}
+user_input = "Hi there! My name is Will."
+
+# The config is the **second positional argument** to stream() or invoke()!
+events = graph.stream(
+    {"messages": [{"role": "user", "content": user_input}]},
+    config,
+    stream_mode="values",
+)
+for event in events:
+    event["messages"][-1].pretty_print()
+
+user_input = "Remember my name?"
+
+# The config is the **second positional argument** to stream() or invoke()!
+events = graph.stream(
+    {"messages": [{"role": "user", "content": user_input}]},
+    config,
+    stream_mode="values",
+)
+for event in events:
+    event["messages"][-1].pretty_print()
+
+snapshot = graph.get_state(config)
+print(snapshot)
