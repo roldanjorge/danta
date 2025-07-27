@@ -5,7 +5,11 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    "ipython>=9.4.0",
+    "langchain-tavily>=0.2.7",
     "langchain[openai]>=0.3.26",
+    "langgraph>=0.5.1",
+    "langsmith>=0.4.4",
     "mkdocs-material>=9.6.15",
     "python-dotenv>=1.1.1",
 ]
@@ -31,6 +35,8 @@ dev = [
 [tool.ruff]
 target-version = "py312"
 line-length = 88
+
+[tool.ruff.lint]
 select = [
     "E",  # pycodestyle errors
     "W",  # pycodestyle warnings
