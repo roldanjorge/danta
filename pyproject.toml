@@ -10,6 +10,7 @@ dependencies = [
     "langchain[openai]>=0.3.26",
     "langgraph>=0.5.1",
     "langsmith>=0.4.4",
+    "mkdocs-material>=9.6.15",
     "python-dotenv>=1.1.1",
 ]
 
