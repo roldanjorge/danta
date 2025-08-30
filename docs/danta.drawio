@@ -1,0 +1,31 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.1.2 Chrome/138.0.7204.243 Electron/37.4.0 Safari/537.36" version="28.1.2">
+  <diagram name="Page-1" id="v6ks2GpWlOUMt25oRh7a">
+    <mxGraphModel dx="1234" dy="799" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="4KUMXfnmEfQvTSi4hLMa-4" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="260" width="170" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="4KUMXfnmEfQvTSi4hLMa-6" value="llm" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="420" y="305" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="4KUMXfnmEfQvTSi4hLMa-7" value="ollama" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="455" y="270" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="4KUMXfnmEfQvTSi4hLMa-8" value="agent" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="140" y="590" width="120" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="4KUMXfnmEfQvTSi4hLMa-9" value="task_manager" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="520" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="4KUMXfnmEfQvTSi4hLMa-10" value="arxiv" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="570" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="4KUMXfnmEfQvTSi4hLMa-11" value="Knowledge Store" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+          <mxGeometry x="440" y="700" width="110" height="150" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
